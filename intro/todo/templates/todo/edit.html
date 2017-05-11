@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>TODO-List</title>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="{% static 'todo/css/bootstrap.min.css' %}">
+    </head>
+    <body>
+        <header class="container">
+            <div class="row" style="background: #3b5998;">
+                <p class="col-xs-12 col-sm-12 text-right" style="color: white;">
+                    <a class="btn btn-info" href="index.html" style="color: white;">Startseite </a>
+                    <a class="btn btn-info" href="newtodo.html" style="color: white;">Neues TODO </a>
+                    <a class="btn btn-info" href="howto.html" style="color: white;">FAQ </a>
+                </p>
+            </div>
+        </header>
+        
+        <h1 class="container">Editiere TODO</h1>
+        <main class="container">
+            <form action="{% url 'todo:newtodo' %}" method="post" >
+            	{% csrf_token %}
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                        Beschreibung
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <input class="form-control" id="text" name="text" type="text" placeholder="TODO, max. 160 Zeichen" maxlength="160" required /> 
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                        Deadline
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <input class="form-control" id="deadline" name="deadline" type="date" placeholder="z.B. 24.12.2017" required /> 
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                        Bearbeitet zu
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <input class="form-control" id="percent" name="percent" type="number" min="0" max="100" placeholder="z.B. 15" required /> 
+                    </div>
+                </div>
+            
+
+                <div class="row">
+                    <div class="form-group col-xs-6 col-sm-3">
+                        <input type="submit" class="btn btn-success form-control" value="Hinzufügen"> 
+                    </div>
+                </div>
+            </form>
+
+        </main>
+        
+        <footer class="container">
+            <div class="row" style="background: #3b5998;">
+                <p class="col-xs-12 col-sm-12 text-right" style="color: white;"><a href="impressum.html" style="color: white;">Impressum</a></p>
+            </div>
+        </footer>
+    </body>
+</html>
