@@ -5,8 +5,9 @@ Make sure that you have already django installed. If you haven´t get it here: h
 How to start on Windows:
 1. Get into the directory where the project is.
 2. Start the django-enviroment with: mkvirtualenv intro
-3. Get into the directory where manage.py is.
-4. Run the server with: python manage.py runserver
+3. Install django on this enviroment with: pip install django
+4. Get into the directory where manage.py is.
+5. Run the server with: python manage.py runserver
 
 How to start on Linux:
 1. Get into the directory where the project is.
